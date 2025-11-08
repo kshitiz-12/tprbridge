@@ -4,11 +4,11 @@ import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section className="relative py-32 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-br from-[#0b1f33] via-[#1f0b0b] to-[#03060a] overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#c53030]/25 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0b1f33]/30 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-2000"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -20,13 +20,13 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <div className="inline-block mb-6">
-            <div className="h-1 w-16 bg-yellow-400 mx-auto"></div>
+            <div className="h-1 w-16 bg-[#f87171] mx-auto"></div>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            Get in <span className="text-yellow-400">Touch</span>
+            Get in <span className="text-[#f87171]">Touch</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Ready to experience the peace of mind that comes with trusted NRI services? 
+            Ready to experience the peace of mind that comes with trusted NRI services?
             Let's start a conversation about how we can help you.
           </p>
         </motion.div>
@@ -55,7 +55,7 @@ export default function Contact() {
             const Icon = item.icon;
             return (
               <motion.a
-                key={index}
+                key={item.title}
                 href={item.link}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -64,8 +64,8 @@ export default function Contact() {
                 whileHover={{ y: -8, scale: 1.05 }}
                 className="block p-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-center hover:bg-white/20 transition-all duration-300"
               >
-                <div className="inline-flex p-4 bg-yellow-400/20 rounded-full mb-4">
-                  <Icon size={32} className="text-yellow-400" />
+                <div className="inline-flex p-4 bg-[#c53030]/25 rounded-full mb-4">
+                  <Icon size={32} className="text-[#f87171]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-white/80">{item.content}</p>
@@ -83,7 +83,7 @@ export default function Contact() {
         >
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-bold text-lg shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-bold text-lg shadow-2xl hover:shadow-[#c53030]/50 transition-all duration-300 hover:scale-105"
           >
             <span>Contact Us Now</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />

@@ -75,11 +75,11 @@ const familyImages = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-32 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-b from-[#fef7f7] to-white overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#fde2e2] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-[#ddebff] rounded-full mix-blend-multiply filter blur-3xl opacity-35 animate-pulse animation-delay-2000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -92,10 +92,10 @@ export default function Testimonials() {
           className="text-center mb-20"
         >
           <div className="inline-block mb-6">
-            <div className="h-1 w-16 bg-indigo-500 mx-auto"></div>
+            <div className="h-1 w-16 bg-[#c53030] mx-auto"></div>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 tracking-tight">
-            Trusted by <span className="text-indigo-600">5,000+ Families</span>
+          <h2 className="text-5xl md:text-6xl font-bold text-[#0b1f33] mb-6 tracking-tight">
+            Trusted by <span className="text-[#c53030]">5,000+ Families</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Real stories from NRI families who have made Tipping Bridge their trusted partner
@@ -123,10 +123,10 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#f2dcdc]"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-indigo-100">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-[#fde4e4]">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -134,7 +134,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-slate-800 mb-1">
+                  <h3 className="text-xl font-bold text-[#0b1f33] mb-1">
                     {testimonial.name}
                   </h3>
                   <p className="text-slate-500 text-sm">{testimonial.location}</p>
@@ -143,12 +143,12 @@ export default function Testimonials() {
                       <Star
                         key={`star-${testimonial.id}-${i}`}
                         size={16}
-                        className="fill-amber-400 text-amber-400"
+                        className="fill-[#f97373] text-[#f97373]"
                       />
                     ))}
                   </div>
                 </div>
-                <Quote size={32} className="text-indigo-200 flex-shrink-0" />
+                <Quote size={32} className="text-[#fbd5d5] flex-shrink-0" />
               </div>
               <p className="text-slate-700 leading-relaxed text-lg italic">
                 "{testimonial.quote}"

@@ -101,28 +101,28 @@ export default function ContactPage() {
       title: 'Email Us',
       content: 'info@tippingbridge.com',
       link: 'mailto:info@tippingbridge.com',
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-[#c53030] to-[#7a0b0b]',
     },
     {
       icon: Phone,
       title: 'Call Us',
       content: '+1 (555) 123-4567',
       link: 'tel:+15551234567',
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-[#7a0b0b] to-[#0b1f33]',
     },
     {
       icon: MapPin,
       title: 'Visit Us',
       content: 'Mumbai, India',
       link: '#',
-      gradient: 'from-indigo-500 to-blue-500',
+      gradient: 'from-[#0b1f33] to-[#102c44]',
     },
     {
       icon: Clock,
       title: 'Business Hours',
       content: 'Mon - Sat: 9 AM - 6 PM IST',
       link: '#',
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'from-[#d33b3b] to-[#7a0b0b]',
     },
   ];
 
@@ -140,10 +140,10 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#0b1f33] via-[#1f0b0b] to-[#03060a] overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#c53030]/25 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0b1f33]/25 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <motion.div
@@ -153,7 +153,7 @@ export default function ContactPage() {
           className="max-w-4xl mx-auto text-center relative z-10"
         >
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-            Get in <span className="text-yellow-400">Touch</span>
+            Get in <span className="text-[#f87171]">Touch</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
             Ready to experience premium NRI services? Let's start a conversation about how we can help you.
@@ -175,12 +175,12 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="block p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100"
+                  className="block p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#f2dcdc]"
                 >
                   <div className={`inline-flex p-3 bg-gradient-to-br ${info.gradient} rounded-xl mb-4`}>
                     <Icon size={24} className="text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">{info.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0b1f33] mb-2">{info.title}</h3>
                   <p className="text-slate-600">{info.content}</p>
                 </motion.a>
               );
@@ -212,10 +212,10 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border-2 border-green-200 text-center"
+                  className="p-8 bg-gradient-to-br from-[#fdeaea] to-[#f4f1f9] rounded-2xl border-2 border-[#f6dada] text-center"
                 >
-                  <CheckCircle className="mx-auto mb-4 text-green-600" size={64} />
-                  <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                  <CheckCircle className="mx-auto mb-4 text-[#c53030]" size={64} />
+                  <h3 className="text-2xl font-bold text-[#0b1f33] mb-2">
                     Thank You!
                   </h3>
                   <p className="text-slate-600">
@@ -239,7 +239,7 @@ export default function ContactPage() {
                         className={`w-full pl-12 pr-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 transition-all ${
                           errors.name
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-slate-200 focus:border-indigo-600 focus:ring-indigo-600'
+                            : 'border-[#f2dcdc] focus:border-[#c53030] focus:ring-[#c53030]'
                         }`}
                         placeholder="John Doe"
                       />
@@ -264,7 +264,7 @@ export default function ContactPage() {
                         className={`w-full pl-12 pr-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 transition-all ${
                           errors.email
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-slate-200 focus:border-indigo-600 focus:ring-indigo-600'
+                            : 'border-[#f2dcdc] focus:border-[#c53030] focus:ring-[#c53030]'
                         }`}
                         placeholder="john@example.com"
                       />
@@ -289,7 +289,7 @@ export default function ContactPage() {
                         className={`w-full pl-12 pr-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 transition-all ${
                           errors.phone
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-slate-200 focus:border-indigo-600 focus:ring-indigo-600'
+                            : 'border-[#f2dcdc] focus:border-[#c53030] focus:ring-[#c53030]'
                         }`}
                         placeholder="+1 (555) 123-4567"
                       />
@@ -308,7 +308,7 @@ export default function ContactPage() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:border-indigo-600 focus:ring-indigo-600 transition-all"
+                      className="w-full px-4 py-3 border-2 border-[#f2dcdc] rounded-lg focus:outline-none focus:ring-2 focus:border-[#c53030] focus:ring-[#c53030] transition-all"
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (
@@ -334,7 +334,7 @@ export default function ContactPage() {
                         className={`w-full pl-12 pr-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 transition-all resize-none ${
                           errors.message
                             ? 'border-red-500 focus:ring-red-500'
-                            : 'border-slate-200 focus:border-indigo-600 focus:ring-indigo-600'
+                            : 'border-[#f2dcdc] focus:border-[#c53030] focus:ring-[#c53030]'
                         }`}
                         placeholder="Tell us about your requirements..."
                       />
@@ -350,7 +350,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-bold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-lg font-bold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
@@ -375,7 +375,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
-              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-100">
+              <div className="bg-gradient-to-br from-[#fdeaea] to-[#f4f1f9] rounded-2xl p-8 border border-[#f6dada]">
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">
                   Why Choose Tipping Bridge?
                 </h3>
@@ -389,7 +389,7 @@ export default function ContactPage() {
                     'Quick Response Times',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <CheckCircle className="text-indigo-600 flex-shrink-0" size={20} />
+                      <CheckCircle className="text-[#c53030] flex-shrink-0" size={20} />
                       <span className="text-slate-700">{item}</span>
                     </li>
                   ))}
@@ -403,13 +403,13 @@ export default function ContactPage() {
                 <p className="text-slate-600 mb-4">
                   We understand your time is valuable. Our team typically responds to all inquiries within 24 hours, often much sooner.
                 </p>
-                <div className="flex items-center gap-2 text-indigo-600 font-semibold">
+                <div className="flex items-center gap-2 text-[#c53030] font-semibold">
                   <Clock size={20} />
                   <span>Average Response: 4-6 hours</span>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-slate-900 to-indigo-900 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-[#03060a] to-[#0b1f33] rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">
                   Need Immediate Assistance?
                 </h3>
@@ -418,7 +418,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href="tel:+15551234567"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-slate-900 rounded-lg font-bold hover:bg-yellow-500 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#f87171] to-[#c53030] text-white rounded-lg font-bold hover:shadow-lg transition-colors"
                 >
                   <Phone size={20} />
                   <span>Call Now</span>

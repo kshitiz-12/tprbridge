@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const heroImages = [
   'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1920&q=80',
   'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80',
   'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80',
   'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80',
-];
+]
 
 function Hero() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 6000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -38,7 +38,7 @@ function Hero() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${image})` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/90 via-purple-900/80 to-blue-900/90"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1f0b0b]/90 via-[#321012]/85 to-[#071018]/92"></div>
             </div>
           </motion.div>
         ))}
@@ -49,7 +49,7 @@ function Hero() {
         {Array.from({ length: 20 }, (_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-2 h-2 bg-white/15 rounded-full"
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -57,7 +57,7 @@ function Hero() {
             animate={{
               y: [null, Math.random() * window.innerHeight],
               x: [null, Math.random() * window.innerWidth],
-              opacity: [0.2, 0.6, 0.2],
+              opacity: [0.15, 0.45, 0.15],
             }}
             transition={{
               duration: Math.random() * 10 + 10,
@@ -71,18 +71,18 @@ function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6 inline-block"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="mb-8 flex justify-center"
         >
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-            className="inline-block"
-          >
-            <Sparkles className="text-yellow-400" size={48} />
-          </motion.div>
+          <motion.img
+            src="/tpbridge-logo.jpg"
+            alt="Tipping Bridge logo"
+            className="w-28 h-28 rounded-2xl shadow-2xl"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          />
         </motion.div>
 
         <motion.h1
@@ -92,7 +92,7 @@ function Hero() {
           className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight"
         >
           Welcome to{' '}
-          <span className="bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300 bg-clip-text text-transparent animate-pulse">
+          <span className="bg-gradient-to-r from-[#f87171] via-[#fca5a5] to-[#f87171] bg-clip-text text-transparent animate-pulse">
             Tipping Bridge
           </span>
         </motion.h1>
@@ -124,14 +124,14 @@ function Hero() {
         >
           <Link
             to="/services"
-            className="group relative px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 rounded-full font-bold text-lg overflow-hidden shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300 hover:scale-105"
+            className="group relative px-8 py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-bold text-lg overflow-hidden shadow-2xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
           >
             <span className="relative z-10 flex items-center gap-2">
               Our Services
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </span>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600"
+              className="absolute inset-0 bg-gradient-to-r from-[#e53e3e] to-[#9b1c1c]"
               initial={{ x: '-100%' }}
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3 }}
@@ -140,31 +140,11 @@ function Hero() {
 
           <Link
             to="/contact"
-            className="group px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 flex items-center gap-2"
+            className="group px-8 py-4 bg-transparent border-2 border-[#fca5a5] text-white rounded-full font-bold text-lg hover:bg-[#fca5a5]/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 flex items-center gap-2"
           >
             Get in Touch
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
-            />
-          </motion.div>
         </motion.div>
       </div>
 
@@ -176,15 +156,15 @@ function Hero() {
             onClick={() => setCurrentImageIndex(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
               index === currentImageIndex
-                ? 'bg-yellow-400 w-8'
-                : 'bg-white/50 w-2 hover:bg-white/75'
+                ? 'bg-[#f87171] w-8'
+                : 'bg-white/50 w-2 hover:bg-[#fca5a5]/75'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

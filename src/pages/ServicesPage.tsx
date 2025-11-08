@@ -44,7 +44,7 @@ const services: Service[] = [
     shortDescription: 'Complete property oversight, maintenance, and tenant management for your assets in India.',
     fullDescription: 'Our comprehensive property management services ensure your real estate investments in India are well-maintained, profitable, and hassle-free. We handle everything from tenant screening and rent collection to property maintenance and legal compliance.',
     icon: Home,
-    gradient: 'from-blue-500 to-cyan-500',
+    gradient: 'from-[#c53030] to-[#7a0b0b]',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80',
     features: [
       '24/7 Property Monitoring & Maintenance',
@@ -70,7 +70,7 @@ const services: Service[] = [
     shortDescription: 'Expert assistance with all legal documents, certificates, and government paperwork.',
     fullDescription: 'Navigate India\'s complex documentation requirements with ease. Our expert team handles all paperwork, certificates, and government documentation, ensuring accuracy and compliance. From birth certificates to property deeds, we manage it all.',
     icon: FileText,
-    gradient: 'from-purple-500 to-pink-500',
+    gradient: 'from-[#7a0b0b] to-[#0b1f33]',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80',
     features: [
       'Birth, Marriage & Death Certificates',
@@ -96,7 +96,7 @@ const services: Service[] = [
     shortDescription: 'Medical appointments, hospital coordination, and healthcare management for your loved ones.',
     fullDescription: 'Ensure your family receives the best healthcare in India. We coordinate medical appointments, manage hospital admissions, facilitate doctor consultations, and provide ongoing healthcare support for your loved ones.',
     icon: Heart,
-    gradient: 'from-red-500 to-rose-500',
+    gradient: 'from-[#e53e3e] to-[#991b1b]',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&q=80',
     features: [
       'Doctor Appointment Scheduling',
@@ -122,7 +122,7 @@ const services: Service[] = [
     shortDescription: 'Company registration, compliance, and business advisory for your ventures in India.',
     fullDescription: 'Launch and grow your business in India with our comprehensive business services. From company registration to ongoing compliance, tax filing, and business advisory, we provide end-to-end support for your entrepreneurial journey.',
     icon: Briefcase,
-    gradient: 'from-indigo-500 to-blue-500',
+    gradient: 'from-[#0b1f33] to-[#102c44]',
     image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
     features: [
       'Company Registration (LLP, Pvt Ltd, etc.)',
@@ -148,7 +148,7 @@ const services: Service[] = [
     shortDescription: 'School admissions, education counseling, and academic support for your children.',
     fullDescription: 'Secure the best educational opportunities for your children in India. Our education consultants help with school admissions, application processes, academic counseling, and ongoing educational support to ensure your child\'s success.',
     icon: GraduationCap,
-    gradient: 'from-green-500 to-emerald-500',
+    gradient: 'from-[#d33b3b] to-[#7a0b0b]',
     image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80',
     features: [
       'School & University Admissions',
@@ -174,7 +174,7 @@ const services: Service[] = [
     shortDescription: 'Comprehensive legal support, dispute resolution, and regulatory compliance services.',
     fullDescription: 'Protect your interests with our expert legal services. We provide comprehensive legal support including contract review, dispute resolution, property litigation, family law matters, and ongoing compliance monitoring.',
     icon: Shield,
-    gradient: 'from-amber-500 to-orange-500',
+    gradient: 'from-[#102c44] to-[#0b1f33]',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80',
     features: [
       'Legal Consultation & Advisory',
@@ -219,10 +219,10 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-6 bg-gradient-to-br from-[#0b1f33] via-[#1f0b0b] to-[#03060a] overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#c53030]/25 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0b1f33]/25 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <motion.div
@@ -232,7 +232,7 @@ export default function ServicesPage() {
           className="max-w-7xl mx-auto text-center relative z-10"
         >
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-            Premium <span className="text-yellow-400">Services</span>
+            Premium <span className="text-[#f87171]">Services</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
             Comprehensive solutions tailored for NRI families with unmatched expertise and care
@@ -246,7 +246,7 @@ export default function ServicesPage() {
               placeholder="Search services..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              className="w-full pl-12 pr-4 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-[#f87171] focus:border-transparent"
             />
           </div>
 
@@ -256,7 +256,7 @@ export default function ServicesPage() {
               onClick={() => setSelectedCategory(null)}
               className={`px-6 py-2 rounded-full font-medium transition-all ${
                 !selectedCategory
-                  ? 'bg-yellow-400 text-slate-900'
+                  ? 'bg-[#f87171] text-white shadow-lg shadow-[#f8717140]'
                   : 'bg-white/10 text-white hover:bg-white/20'
               }`}
             >
@@ -268,7 +268,7 @@ export default function ServicesPage() {
                 onClick={() => setSelectedCategory(service.id)}
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
                   selectedCategory === service.id
-                    ? 'bg-yellow-400 text-slate-900'
+                    ? 'bg-[#f87171] text-white shadow-lg shadow-[#f8717140]'
                     : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
               >
@@ -300,7 +300,7 @@ export default function ServicesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ y: -12, transition: { duration: 0.3 } }}
-                    className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100"
+                    className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#f2dcdc]"
                   >
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -320,13 +320,13 @@ export default function ServicesPage() {
                     {/* Content */}
                     <div className="p-6">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-2xl font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">
+                        <h3 className="text-2xl font-bold text-[#0b1f33] group-hover:text-[#c53030] transition-colors">
                           {service.title}
                         </h3>
                         {service.testimonials && (
-                          <div className="flex items-center gap-1 text-amber-500">
-                            <Star size={16} className="fill-amber-500" />
-                            <span className="text-sm font-medium text-slate-600">
+                          <div className="flex items-center gap-1 text-[#f87171]">
+                            <Star size={16} className="fill-[#f87171]" />
+                            <span className="text-sm font-medium text-[#c53030]">
                               {service.testimonials}
                             </span>
                           </div>
@@ -350,7 +350,7 @@ export default function ServicesPage() {
 
                       <button
                         onClick={() => setSelectedService(service)}
-                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                       >
                         <span>View Details</span>
                         <ArrowRight size={18} />
@@ -466,7 +466,7 @@ export default function ServicesPage() {
                     <div className="grid md:grid-cols-2 gap-3">
                       {selectedService.features.map((feature) => (
                         <div key={feature} className="flex items-start gap-3">
-                          <Check className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
+                          <Check className="text-[#c53030] flex-shrink-0 mt-1" size={20} />
                           <span className="text-slate-700">{feature}</span>
                         </div>
                       ))}
@@ -474,24 +474,24 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Pricing */}
-                  <div className="mb-8 p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
-                    <h3 className="text-2xl font-bold text-slate-800 mb-4">Pricing Plans</h3>
+                  <div className="mb-8 p-6 bg-gradient-to-br from-[#fdeaea] to-[#f4f1f9] rounded-2xl border border-[#f6dada]">
+                    <h3 className="text-2xl font-bold text-[#0b1f33] mb-4">Pricing Plans</h3>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-white p-4 rounded-xl">
                         <div className="font-semibold text-slate-700 mb-2">Basic</div>
-                        <div className="text-2xl font-bold text-indigo-600">
+                        <div className="text-2xl font-bold text-[#c53030]">
                           {selectedService.pricing.basic}
                         </div>
                       </div>
-                      <div className="bg-white p-4 rounded-xl border-2 border-indigo-600">
+                      <div className="bg-white p-4 rounded-xl border-2 border-[#c53030]">
                         <div className="font-semibold text-slate-700 mb-2">Premium</div>
-                        <div className="text-2xl font-bold text-indigo-600">
+                        <div className="text-2xl font-bold text-[#c53030]">
                           {selectedService.pricing.premium}
                         </div>
                       </div>
                       <div className="bg-white p-4 rounded-xl">
                         <div className="font-semibold text-slate-700 mb-2">Enterprise</div>
-                        <div className="text-2xl font-bold text-indigo-600">
+                        <div className="text-2xl font-bold text-[#c53030]">
                           {selectedService.pricing.enterprise}
                         </div>
                       </div>
@@ -502,14 +502,14 @@ export default function ServicesPage() {
                   <div className="flex gap-4">
                     <a
                       href="/contact"
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-bold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-lg font-bold hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       <span>Get Started</span>
                       <ArrowRight size={20} />
                     </a>
                     <button
                       onClick={() => setSelectedService(null)}
-                      className="px-6 py-4 border-2 border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
+                      className="px-6 py-4 border-2 border-[#f2dcdc] text-[#0b1f33] rounded-lg font-semibold hover:bg-[#fdf5f5] transition-colors"
                     >
                       Close
                     </button>

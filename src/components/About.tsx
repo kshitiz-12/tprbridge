@@ -34,8 +34,8 @@ export default function About() {
     <section className="relative py-32 bg-white overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#fde4e4] rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#d8e5ff] rounded-full mix-blend-multiply filter blur-3xl opacity-35"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -52,7 +52,7 @@ export default function About() {
               whileInView={{ width: 64 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-1 bg-indigo-500 mb-6"
+              className="h-1 bg-[#c53030] mb-6"
             ></motion.div>
 
             <motion.h2
@@ -60,17 +60,17 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-5xl md:text-6xl font-bold text-slate-800 mb-8 tracking-tight"
+              className="text-5xl md:text-6xl font-bold text-[#0b1f33] mb-8 tracking-tight"
             >
               About{' '}
-              <span className="text-indigo-600 relative">
+              <span className="text-[#c53030] relative">
                 Tipping Bridge
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="absolute bottom-0 left-0 h-1 bg-yellow-400"
+                  className="absolute bottom-0 left-0 h-1 bg-[#f87171]"
                 />
               </span>
             </motion.h2>
@@ -130,7 +130,7 @@ export default function About() {
                   transition={{ duration: 0.4, delay: 0.8 }}
                   className="flex items-center gap-3"
                 >
-                  <CheckCircle className="text-indigo-600 flex-shrink-0" size={20} />
+                  <CheckCircle className="text-[#c53030] flex-shrink-0" size={20} />
                   <span className="text-slate-700 font-medium">{point}</span>
                 </motion.div>
               ))}
@@ -145,34 +145,34 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 border-2 border-indigo-200 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="bg-gradient-to-br from-[#fdeaea] via-[#f7f1f1] to-[#e9effa] border-2 border-[#f6dada] rounded-3xl p-8 md:p-12 shadow-2xl">
               <div className="space-y-8">
-          {values.map((value) => {
-            const Icon = value.icon;
-            return (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                className="flex items-start gap-4"
-              >
-                <motion.div
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                  className="p-4 bg-white rounded-2xl shadow-lg flex-shrink-0 border border-indigo-100"
-                >
-                  <Icon size={32} className="text-indigo-600" strokeWidth={1.5} />
-                </motion.div>
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-800 mb-3">{value.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{value.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+                {values.map((value) => {
+                  const Icon = value.icon
+                  return (
+                    <motion.div
+                      key={value.title}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                      className="flex items-start gap-4"
+                    >
+                      <motion.div
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                        className="p-4 bg-white rounded-2xl shadow-lg flex-shrink-0 border border-[#f1d2d2]"
+                      >
+                        <Icon size={32} className="text-[#c53030]" strokeWidth={1.5} />
+                      </motion.div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-[#0b1f33] mb-3">{value.title}</h3>
+                        <p className="text-slate-600 leading-relaxed">{value.description}</p>
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
             </div>
           </motion.div>
@@ -184,10 +184,10 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t-2 border-b-2 border-indigo-200 py-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t-2 border-b-2 border-[#f2dcdc] py-12"
         >
           {stats.map((stat) => {
-            const Icon = stat.icon;
+            const Icon = stat.icon
             return (
               <motion.div
                 key={stat.label}
@@ -199,8 +199,8 @@ export default function About() {
                 className="text-center"
               >
                 <div className="flex justify-center mb-3">
-                  <div className="p-3 bg-indigo-100 rounded-full">
-                    <Icon size={24} className="text-indigo-600" />
+                  <div className="p-3 bg-[#fde4e4] rounded-full">
+                    <Icon size={24} className="text-[#c53030]" />
                   </div>
                 </div>
                 <motion.div
@@ -208,16 +208,16 @@ export default function About() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-5xl font-bold text-indigo-600 mb-2"
+                  className="text-5xl font-bold text-[#c53030] mb-2"
                 >
                   {stat.value}
                 </motion.div>
                 <div className="text-sm text-slate-600 font-semibold">{stat.label}</div>
               </motion.div>
-            );
+            )
           })}
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

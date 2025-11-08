@@ -32,64 +32,73 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          : 'bg-[#04070d]/60 backdrop-blur'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-2 group"
-          >
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
-              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent"
+          <Link to="/" className="flex items-center gap-3 group">
+            <motion.img
+              src="/tpbridge-logo.jpg"
+              alt="Tipping Bridge"
+              className="h-10 w-10 md:h-12 md:w-12 rounded-md shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            />
+            <span
+              className={`text-2xl md:text-3xl font-bold tracking-tight ${
+                isScrolled ? 'text-[#0b1f33]' : 'text-white'
+              }`}
             >
               Tipping Bridge
-            </motion.div>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => {
-                const getLinkClassName = () => {
-                  if (isActive(link.to)) return 'text-indigo-600';
-                  if (isScrolled) return 'text-slate-700 hover:text-indigo-600';
-                  return 'text-white hover:text-yellow-400';
-                };
+            {navLinks.map((link) => {
+              const getLinkClassName = () => {
+                if (isActive(link.to)) return 'text-[#c53030]';
+                if (isScrolled)
+                  return 'text-slate-800 hover:text-[#c53030]';
+                return 'text-white hover:text-red-300';
+              };
 
-                return (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="relative group"
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="relative group"
+                >
+                  <span
+                    className={`text-lg font-semibold transition-colors duration-300 ${getLinkClassName()}`}
                   >
-                    <span
-                      className={`text-lg font-medium transition-colors duration-300 ${getLinkClassName()}`}
-                    >
-                      {link.label}
-                    </span>
-                {isActive(link.to) && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-600"
-                    initial={false}
-                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                  />
+                    {link.label}
+                  </span>
+                  {isActive(link.to) && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#c53030]"
+                      initial={false}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 500,
+                        damping: 30,
+                      }}
+                    />
                   )}
-                {!isActive(link.to) && (
-                  <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-indigo-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
-                  />
-                )}
-                  </Link>
-                );
-              })}
+                  {!isActive(link.to) && (
+                    <motion.div
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#c53030] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                    />
+                  )}
+                </Link>
+              );
+            })}
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Get Started
             </Link>
@@ -98,7 +107,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-slate-700"
+            className={`md:hidden p-2 ${isScrolled ? 'text-slate-800' : 'text-white'}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -114,7 +123,7 @@ export default function Navigation() {
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md"
+        className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md shadow-lg"
       >
         <div className="px-6 py-4 space-y-4">
           {navLinks.map((link) => (
@@ -122,10 +131,10 @@ export default function Navigation() {
               key={link.to}
               to={link.to}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block text-lg font-medium transition-colors ${
+              className={`block text-lg font-semibold transition-colors ${
                 isActive(link.to)
-                  ? 'text-indigo-600'
-                  : 'text-slate-700 hover:text-indigo-600'
+                  ? 'text-[#c53030]'
+                  : 'text-slate-800 hover:text-[#c53030]'
               }`}
             >
               {link.label}
@@ -134,7 +143,7 @@ export default function Navigation() {
           <Link
             to="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="block w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full font-semibold text-center"
+            className="block w-full px-6 py-3 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold text-center hover:shadow-lg transition-all duration-300"
           >
             Get Started
           </Link>
