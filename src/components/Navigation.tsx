@@ -42,7 +42,7 @@ export default function Navigation() {
             <motion.img
               src="/tpbridge-logo.png"
               alt="Tipping Bridge"
-              className="h-10 w-10 md:h-12 md:w-12 rounded-md shadow-lg"
+              className="h-10 w-10 md:h-12 md:w-12 object-contain"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />

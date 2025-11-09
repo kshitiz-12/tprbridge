@@ -53,13 +53,13 @@ function Hero() {
       <motion.img
         src="/tpbridge-logo.png"
         alt="Tipping Bridge"
-        className="absolute top-24 left-6 sm:left-12 w-28 sm:w-36 md:w-40 rounded-2xl shadow-2xl z-20"
+        className="absolute top-20 left-4 sm:top-24 sm:left-12 w-24 sm:w-32 md:w-40 object-contain z-20"
         initial={{ opacity: 0, x: -30, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-8 pt-48 pb-24 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-8 pt-44 sm:pt-48 pb-20 sm:pb-24 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,21 +82,21 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
+          className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center"
         >
           <Link
             to="/services"
-            className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-bold text-lg shadow-2xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
           >
             <span>Our Services</span>
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
           </Link>
           <Link
             to="/contact"
-            className="group inline-flex items-center justify-center px-8 py-4 border-2 border-[#c53030] text-[#0b1f33] rounded-full font-bold text-lg hover:bg-[#c53030]/10 transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 border-2 border-[#c53030] text-[#0b1f33] rounded-full font-semibold text-base sm:text-lg hover:bg-[#c53030]/10 transition-all duration-300 hover:scale-105"
           >
             Get in Touch
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
           </Link>
         </motion.div>
       </div>
