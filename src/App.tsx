@@ -18,7 +18,7 @@ function App() {
           element={
             <>
               <Navigation />
-              <main className="pt-20 md:pt-24">
+              <main>
                 <Hero />
                 <About />
                 <Services />

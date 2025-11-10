@@ -1,8 +1,66 @@
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Mail, Phone, MapPin, Download, X } from 'lucide-react';
+
+const brochurePath = '/TIPPING BRIDGE BUSINESS BROCHURE.pdf';
 
 export default function Contact() {
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    country: '',
+  });
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const handleOpenModal = () => {
+    setFormError(null);
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      country: '',
+    });
+    setIsBrochureModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsBrochureModalOpen(false);
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const name = formData.name.trim();
+    const phone = formData.phone.trim();
+    const email = formData.email.trim();
+    const country = formData.country.trim();
+
+    if (!name || !phone || !email || !country) {
+      setFormError('Please fill out all fields before downloading the brochure.');
+      return;
+    }
+
+    const whatsappMessage = `Brochure Request\nName: ${name}\nContact Number: ${phone}\nEmail: ${email}\nCountry: ${country}`;
+    const whatsappUrl = `https://wa.me/918000398836?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    const link = document.createElement('a');
+    link.href = brochurePath;
+    link.download = 'TippingBridge-Brochure.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    handleCloseModal();
+  };
+
   return (
     <section className="relative py-24 sm:py-32 bg-gradient-to-br from-[#fff7f7] via-[#fef2f2] to-[#f3f6fb] overflow-hidden px-4 sm:px-6">
       {/* Animated background */}
@@ -79,7 +137,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
+          className="text-center space-y-6"
         >
           <Link
             to="/contact"
@@ -88,8 +146,129 @@ export default function Contact() {
             <span>Contact Us Now</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
+
+          <button
+            onClick={handleOpenModal}
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0b1f33] rounded-full font-bold text-lg shadow-lg border border-[#f2dcdc] hover:border-[#c53030] hover:text-[#c53030] transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Download size={20} className="text-[#c53030] group-hover:animate-pulse" />
+            <span>Download Our Brochure</span>
+          </button>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {isBrochureModalOpen && (
+          <motion.div
+            className="fixed inset-0 z-[999] flex items-center justify-center px-4 py-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={handleCloseModal}
+            ></div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 250, damping: 25 }}
+              className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl p-8 sm:p-10 border border-[#f2dcdc]"
+            >
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 p-2 text-slate-500 hover:text-[#c53030] transition-colors"
+                aria-label="Close brochure form"
+              >
+                <X size={22} />
+              </button>
+              <div className="mb-8 text-center">
+                <h3 className="text-3xl font-bold text-[#0b1f33] mb-3">
+                  Download Our Brochure
+                </h3>
+                <p className="text-slate-600">
+                  Share your details below. You&apos;ll receive the brochure instantly and our team will reach out shortly.
+                </p>
+              </div>
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-[#0b1f33] mb-2">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#f2dcdc] bg-white px-4 py-3 text-[#0b1f33] focus:border-[#c53030] focus:ring-2 focus:ring-[#fcd6d6] transition-colors"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-semibold text-[#0b1f33] mb-2">
+                    Contact Number
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#f2dcdc] bg-white px-4 py-3 text-[#0b1f33] focus:border-[#c53030] focus:ring-2 focus:ring-[#fcd6d6] transition-colors"
+                    placeholder="Include country/area code"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-[#0b1f33] mb-2">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#f2dcdc] bg-white px-4 py-3 text-[#0b1f33] focus:border-[#c53030] focus:ring-2 focus:ring-[#fcd6d6] transition-colors"
+                    placeholder="name@example.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="country" className="block text-sm font-semibold text-[#0b1f33] mb-2">
+                    Country
+                  </label>
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-[#f2dcdc] bg-white px-4 py-3 text-[#0b1f33] focus:border-[#c53030] focus:ring-2 focus:ring-[#fcd6d6] transition-colors"
+                    placeholder="Where are you enquiring from?"
+                    required
+                  />
+                </div>
+                {formError && (
+                  <p className="text-sm font-medium text-[#c53030] bg-[#fde4e4] border border-[#fbcaca] rounded-lg px-4 py-2">
+                    {formError}
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white font-semibold py-3.5 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                >
+                  <Download size={20} />
+                  <span>Submit & Download</span>
+                </button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

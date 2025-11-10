@@ -25,11 +25,10 @@ export default function Navigation() {
   const isActive = (path: string) => location.pathname === path;
   const isHome = location.pathname === '/';
 
-  const navBackgroundClass = isHome
-    ? 'bg-transparent shadow-none backdrop-blur-0'
-    : isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-lg'
-        : 'bg-white/70 backdrop-blur';
+  const hasSolidBackground = isHome ? isScrolled : true;
+  const navBackgroundClass = hasSolidBackground
+    ? 'bg-white/95 backdrop-blur-md shadow-xl'
+    : 'bg-transparent';
 
   return (
     <motion.nav
@@ -38,7 +37,7 @@ export default function Navigation() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBackgroundClass}`}
       style={
-        isHome
+        isHome && !isScrolled
           ? { backgroundColor: 'transparent', boxShadow: 'none', backdropFilter: 'none' }
           : undefined
       }
@@ -61,8 +60,6 @@ export default function Navigation() {
             {navLinks.map((link) => {
               const getLinkClassName = () => {
                 if (isActive(link.to)) return 'text-[#c53030]';
-                if (isScrolled)
-                  return 'text-slate-800 hover:text-[#c53030]';
                 return 'text-[#0b1f33] hover:text-[#c53030]';
               };
 
@@ -99,7 +96,9 @@ export default function Navigation() {
             })}
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-gradient-to-r from-[#c53030] to-[#e04a4a] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className={`px-6 py-2.5 bg-gradient-to-r from-[#c53030] to-[#e04a4a] text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 ${
+                hasSolidBackground ? 'shadow-[#0b1f33]/20' : ''
+              }`}
             >
               Get Started
             </Link>
@@ -108,7 +107,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 ${isScrolled ? 'text-slate-800' : 'text-[#0b1f33]'}`}
+            className="md:hidden p-2 text-[#0b1f33]"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -124,7 +123,7 @@ export default function Navigation() {
           opacity: isMobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md shadow-lg"
+        className="md:hidden overflow-hidden bg-white/95 text-[#0b1f33] backdrop-blur-md shadow-lg transition-colors"
       >
         <div className="px-6 py-4 space-y-4">
           {navLinks.map((link) => (
@@ -135,7 +134,7 @@ export default function Navigation() {
               className={`block text-lg font-semibold transition-colors ${
                 isActive(link.to)
                   ? 'text-[#c53030]'
-                  : 'text-slate-800 hover:text-[#c53030]'
+                  : 'text-[#0b1f33] hover:text-[#c53030]'
               }`}
             >
               {link.label}

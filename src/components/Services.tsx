@@ -2,56 +2,71 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Home,
+  BedDouble,
+  HeartPulse,
+  PiggyBank,
+  Stethoscope,
   FileText,
-  Heart,
-  Briefcase,
-  GraduationCap,
-  Shield,
+  PartyPopper,
   ArrowRight,
 } from 'lucide-react';
 
 const services = [
   {
     title: 'Property Management',
-    description: 'Complete property oversight, maintenance, and tenant management for your assets in India.',
+    description:
+      'Complete property oversight, maintenance, and tenant coordination to keep your assets protected and profitable.',
     icon: Home,
     gradient: 'from-[#c53030] to-[#7a0b0b]',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
   },
   {
-    title: 'Documentation Services',
-    description: 'Expert assistance with all legal documents, certificates, and government paperwork.',
-    icon: FileText,
+    title: 'Long and Short Stay',
+    description:
+      'Curated homes and serviced apartments for every duration, with housekeeping, security, and concierge support.',
+    icon: BedDouble,
     gradient: 'from-[#7a0b0b] to-[#0b1f33]',
+    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
+  },
+  {
+    title: 'Elderly Care',
+    description:
+      'Personalised care plans, home assistance, and wellness monitoring to ensure your loved ones feel supported.',
+    icon: HeartPulse,
+    gradient: 'from-[#e53e3e] to-[#b91c1c]',
+    image: 'https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?w=800&q=80',
+  },
+  {
+    title: 'Investments and Insurance',
+    description:
+      'Guided portfolio planning, safe investments, and insurance advisory tailored for NRI risk profiles.',
+    icon: PiggyBank,
+    gradient: 'from-[#0b1f33] to-[#102c44]',
+    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&q=80',
+  },
+  {
+    title: 'Doctor & Hospital Assistance',
+    description:
+      'Priority appointments, hospital coordination, discharge support, and second opinions handled end-to-end.',
+    icon: Stethoscope,
+    gradient: 'from-[#d33b3b] to-[#7a0b0b]',
+    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
+  },
+  {
+    title: 'Government Documentation',
+    description:
+      'Fast-track processing for IDs, certificates, attestations, and compliance paperwork across departments.',
+    icon: FileText,
+    gradient: 'from-[#0b1f33] to-[#1d3557]',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
   },
   {
-    title: 'Healthcare Support',
-    description: 'Medical appointments, hospital coordination, and healthcare management for your loved ones.',
-    icon: Heart,
-    gradient: 'from-[#e53e3e] to-[#991b1b]',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80',
-  },
-  {
-    title: 'Business Services',
-    description: 'Company registration, compliance, and business advisory for your ventures in India.',
-    icon: Briefcase,
-    gradient: 'from-[#0b1f33] to-[#102c44]',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80',
-  },
-  {
-    title: 'Education Consulting',
-    description: 'School admissions, education counseling, and academic support for your children.',
-    icon: GraduationCap,
-    gradient: 'from-[#d33b3b] to-[#7a0b0b]',
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
-  },
-  {
-    title: 'Legal & Compliance',
-    description: 'Comprehensive legal support, dispute resolution, and regulatory compliance services.',
-    icon: Shield,
-    gradient: 'from-[#102c44] to-[#0b1f33]',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80',
+    title: 'Events & Gathering Services',
+    description:
+      'Intimate celebrations, religious ceremonies, and community meetups planned with venues, décor, and catering.',
+    icon: PartyPopper,
+    gradient: 'from-[#7a0b0b] to-[#c53030]',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80',
   },
 ];
 
