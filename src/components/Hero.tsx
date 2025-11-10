@@ -3,12 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
-const heroImages = [
-  'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1920&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80',
-]
+const heroImages = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png']
 
 function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -21,7 +16,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] overflow-hidden bg-gradient-to-br from-white via-[#fef5f5] to-[#f3f6fb]">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-[#fef5f5] to-[#f3f6fb]">
       {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((image, index) => (
@@ -49,31 +44,21 @@ function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent" />
       </div>
 
-      {/* Fixed logo top-left */}
-      <motion.img
-        src="/tpbridge-logo.png"
-        alt="Tipping Bridge"
-        className="absolute top-20 left-4 sm:top-24 sm:left-12 w-24 sm:w-32 md:w-40 object-contain z-20"
-        initial={{ opacity: 0, x: -30, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      />
-
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-8 pt-44 sm:pt-48 pb-20 sm:pb-24 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-8 pt-20 sm:pt-24 lg:pt-28 pb-20 sm:pb-24 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#0b1f33] leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#7a0b0b] via-[#c53030] to-[#0b1f33] text-transparent bg-clip-text leading-[1.55] sm:leading-[1.45] lg:leading-[1.35]"
         >
-          Your Trusted Partner for NRI Services in India
+          Bridging Distances, Building Trust
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-          className="mt-6 text-base sm:text-lg text-[#34445a] max-w-2xl mx-auto"
+          className="mt-8 text-lg sm:text-xl text-[#1c2a3f] max-w-2xl mx-auto"
         >
           Connecting families across continents with expert care, seamless service, and unwavering trust. Experience peace of mind with India's most trusted NRI concierge service.
         </motion.p>

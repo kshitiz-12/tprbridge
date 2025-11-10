@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
+import Navigation from './components/Navigation'
 
 function App() {
   return (
@@ -16,11 +17,14 @@ function App() {
           path="/"
           element={
             <>
-              <Hero />
-              <About />
-              <Services />
-              <Testimonials />
-              <Contact />
+              <Navigation />
+              <main className="pt-20 md:pt-24">
+                <Hero />
+                <About />
+                <Services />
+                <Testimonials />
+                <Contact />
+              </main>
               <Footer />
             </>
           }

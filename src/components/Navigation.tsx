@@ -23,34 +23,37 @@ export default function Navigation() {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isHome = location.pathname === '/';
+
+  const navBackgroundClass = isHome
+    ? 'bg-transparent shadow-none backdrop-blur-0'
+    : isScrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-white/70 backdrop-blur';
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-white/70 backdrop-blur'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBackgroundClass}`}
+      style={
+        isHome
+          ? { backgroundColor: 'transparent', boxShadow: 'none', backdropFilter: 'none' }
+          : undefined
+      }
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center group">
             <motion.img
               src="/tpbridge-logo.png"
               alt="Tipping Bridge"
-              className="h-10 w-10 md:h-12 md:w-12 object-contain"
+              className="h-20 w-20 md:h-24 md:w-24 object-contain"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />
-            <span
-              className={`text-2xl md:text-3xl font-bold tracking-tight text-[#0b1f33]`}
-            >
-              Tipping Bridge
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
