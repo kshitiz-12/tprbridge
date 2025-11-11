@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Download } from 'lucide-react'
 import { useState, useEffect, useMemo } from 'react'
 
 const DESKTOP_IMAGES = ['/2.png', '/4.png', '/5.png']
@@ -70,25 +70,25 @@ function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 pt-24 sm:pt-28 lg:pt-32 pb-20 sm:pb-24 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] sm:min-h-[calc(100vh-8rem)] text-center space-y-6 pt-12 sm:pt-16">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
-          className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#b71c1c] via-[#e63946] to-[#102a43] tracking-[-0.01em] whitespace-nowrap text-2xl sm:text-5xl lg:text-6xl leading-[1.3] sm:leading-[1.2] lg:leading-[1.1] drop-shadow-[0_6px_18px_rgba(16,42,67,0.35)]"
-          style={{ fontFamily: 'Manrope, sans-serif' }}
+          className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#b71c1c]/70 via-[#e63946]/65 to-[#102a43]/60 tracking-[-0.01em] whitespace-nowrap text-xl sm:text-5xl lg:text-6xl leading-[1.45] sm:leading-[1.3] lg:leading-[1.15] drop-shadow-[0_6px_18px_rgba(16,42,67,0.2)]"
+          style={{ fontFamily: 'Sora, Manrope, sans-serif' }}
         >
           Bridging Distances, Building Trust
         </motion.h1>
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
           className="mt-5 text-base sm:text-xl text-[#243247] max-w-3xl mx-auto leading-relaxed"
         >
           Connecting families across continents with expert care, seamless service, and unwavering trust. Experience peace of mind with India's most trusted NRI concierge service.
-        </motion.p>
+        </motion.p> */}
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -110,6 +110,15 @@ function Hero() {
             Get in Touch
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
           </Link>
+          <button
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('open-brochure-modal'));
+            }}
+            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-white text-[#0b1f33] rounded-full font-semibold text-base sm:text-lg shadow-lg border border-[#f2dcdc] hover:border-[#c53030] hover:text-[#c53030] transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Download size={18} className="mr-2 text-[#c53030] group-hover:animate-pulse" />
+            Know Us Better
+          </button>
         </motion.div>
       </div>
 
@@ -119,9 +128,8 @@ function Hero() {
           <button
             key={index}
             onClick={() => setCurrentImageIndex(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentImageIndex ? 'bg-[#f87171] w-8' : 'bg-[#0b1f33]/40 w-2 hover:bg-[#c53030]/60'
-            }`}
+            className={`h-2 rounded-full transition-all duration-300 ${index === currentImageIndex ? 'bg-[#f87171] w-8' : 'bg-[#0b1f33]/40 w-2 hover:bg-[#c53030]/60'
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

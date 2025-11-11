@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Mail, Phone, MapPin, Download, X } from 'lucide-react';
@@ -29,6 +29,14 @@ export default function Contact() {
   const handleCloseModal = () => {
     setIsBrochureModalOpen(false);
   };
+
+  useEffect(() => {
+    const handleExternalOpen = () => {
+      handleOpenModal();
+    };
+    window.addEventListener('open-brochure-modal', handleExternalOpen);
+    return () => window.removeEventListener('open-brochure-modal', handleExternalOpen);
+  }, []);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
