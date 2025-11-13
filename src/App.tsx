@@ -8,10 +8,12 @@ import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import Navigation from './components/Navigation'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   return (
     <Router>
+      <WhatsAppButton />
       <Routes>
         <Route
           path="/"

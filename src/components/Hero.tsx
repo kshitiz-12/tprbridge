@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Download } from 'lucide-react'
 import { useState, useEffect, useMemo } from 'react'
 
 const DESKTOP_IMAGES = ['/2.png', '/4.png', '/5.png']
@@ -96,29 +94,19 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
           className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center"
         >
-          <Link
-            to="/services"
+          <a
+            href="https://wa.me/917303667600"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
           >
-            <span>Our Services</span>
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-          </Link>
-          <Link
-            to="/contact"
-            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 border-2 border-[#c53030] text-[#0b1f33] rounded-full font-semibold text-base sm:text-lg hover:bg-[#c53030]/10 transition-all duration-300 hover:scale-105"
-          >
-            Get in Touch
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-          </Link>
-          <button
-            onClick={() => {
-              window.dispatchEvent(new CustomEvent('open-brochure-modal'));
-            }}
-            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-white text-[#0b1f33] rounded-full font-semibold text-base sm:text-lg shadow-lg border border-[#f2dcdc] hover:border-[#c53030] hover:text-[#c53030] transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <Download size={18} className="mr-2 text-[#c53030] group-hover:animate-pulse" />
-            Know Us Better
-          </button>
+            <span>WhatsApp us</span>
+            <img
+              src="/whatsapp logo (1).webp"
+              alt="WhatsApp"
+              className="ml-2 w-[60px] h-[60px] object-contain group-hover:translate-x-1 transition-transform"
+            />
+          </a>
         </motion.div>
       </div>
 

@@ -45,7 +45,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group md:-ml-[5%]">
             <motion.img
               src="/tpbridge-logo.png"
               alt="Tipping Bridge"
