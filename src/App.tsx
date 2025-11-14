@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
+import AboutPage from './pages/AboutPage'
 import Navigation from './components/Navigation'
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -33,6 +34,7 @@ function App() {
         />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Router>
   )

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 const DESKTOP_IMAGES = ['/2.png', '/4.png', '/5.png']
 const MOBILE_IMAGES = ['/m1.png', '/m2.png', '/m3.png', '/m4.png']
@@ -94,19 +95,21 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
           className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center"
         >
-          <a
-            href="https://wa.me/917303667600"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/about"
             className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
           >
-            <span>WhatsApp us</span>
-            <img
-              src="/whatsapp logo (1).webp"
-              alt="WhatsApp"
-              className="ml-2 w-[60px] h-[60px] object-contain group-hover:translate-x-1 transition-transform"
-            />
-          </a>
+            <span>Discover Us</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
         </motion.div>
       </div>
 
