@@ -97,18 +97,33 @@ function Hero() {
         >
           <Link
             to="/about"
-            className="group inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#c53030] to-[#7a0b0b] text-white rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-[#c53030]/40 transition-all duration-300 hover:scale-105"
+            className="group relative inline-flex items-center justify-center px-8 py-3.5 sm:py-4 bg-transparent backdrop-blur-md border-2 border-[#c53030]/70 text-[#c53030]/80 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl hover:shadow-[#c53030]/20 transition-all duration-300 hover:scale-105 hover:border-[#c53030] hover:text-[#c53030] overflow-hidden"
           >
-            <span>Discover Us</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <span className="relative z-10 flex items-center gap-2">
+              <span>Discover Us</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            <span className="absolute inset-0 bg-gradient-to-r from-[#c53030]/90 to-[#7a0b0b]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
+            <span className="absolute inset-0 text-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 font-semibold">
+              <span>Discover Us</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
           </Link>
         </motion.div>
       </div>

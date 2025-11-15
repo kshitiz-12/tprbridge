@@ -9,7 +9,6 @@ import {
   Heart,
   CheckCircle,
   Shield,
-  Clock,
   TrendingUp,
   Zap,
   Handshake,
